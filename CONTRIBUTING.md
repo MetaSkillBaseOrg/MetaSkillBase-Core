@@ -1,14 +1,16 @@
 # Contributing to MetaSkillBase-Core
 
+**Version:** 1.0.1 (2026-03-12)
+
 ## Who Can Contribute?
 - Contributor: submits skills, demands, code, docs
-- Developer: improves Cutter Engine
+- Developer: improves skill-decomposer Engine
 - Documenter: updates documents
 
 ## Contribution Workflow
 1. **Submit New Demand**
    - Create Issue: `Demand: [Skill Name] – [Description]`
-   - Label: `demand`
+   - Label: `status:todo`
 
 2. **Develop Skill**
    - Claim unclaimed demand
@@ -16,7 +18,7 @@
    - Place in correct category
    - Create PR
 
-3. **Contribute to Cutter**
+3. **Contribute to skill-decomposer**
    - Follow PEP 8
    - Add clear comments
    - Test locally

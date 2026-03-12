@@ -1,6 +1,8 @@
 # MetaSkillBase-Core
 ## Core Specification & Repository Rules
 
+**Version:** 1.0.1 (2026-03-12)
+
 ### 1. Core Philosophy
 - **One for Human, One for Bot**: Every product needs two instructions — one for humans, one for bots.
 - **Meta Skill**: Finest-grained reusable functional component.
@@ -32,8 +34,16 @@
 - All skills compatible with OpenClaw.
 - Contributions recorded and credited.
 
-### 6. Cutter Engine Rules
+### 6. skill-decomposer Rules
 - Search OpenClaw
 - Query local skills
 - Search MetaSkillBase-Core for Meta Skills
 - Submit missing Meta Skills for development
+- Language: Dialogue in user's language, outputs in English
+- Authorization: Device Flow (Client ID: Ov23linUVsAaVbPAcQYo)
+
+### 7. Authorization Method
+- **Current:** Device Flow (OAuth 2.0)
+- **Client ID:** Ov23linUVsAaVbPAcQYo
+- **Flow:** 2-step (device code + user confirmation)
+- **Future:** Dedicated authorization server

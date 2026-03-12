@@ -1,5 +1,7 @@
 # MetaSkillBase-Core Skill Index
 
+**Version:** 1.0.1 (2026-03-12)
+
 All meta skills and usage statistics in this repository.
 
 ### Structure

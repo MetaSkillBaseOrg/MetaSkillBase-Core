@@ -1,6 +1,8 @@
 # MetaSkillBase-Core
 ## Meta Skill Library for Demand Decomposition & OpenClaw Ecosystem
 
+**Version:** 1.0.1 (2026-03-12)
+
 A universal, open, and elastic meta skill ecosystem that decomposes human demands into reusable atomic meta skills — **One for Human, One for Bot**.
 
 ---
@@ -62,9 +64,9 @@ I asked my Mac mini to upgrade OpenClaw. It said: *"I can't. No permission."*
 - No need to understand code, commands, or systems.
 - **You only need to describe what you want.**
 
-**Through continuous decomposition (Cutter):**
+**Through continuous decomposition (skill-decomposer):**
 ```
-Your Demand → Cutter → Atomic Meta Skills → OpenClaw Executes → Problem Solved
+Your Demand → skill-decomposer → Atomic Meta Skills → OpenClaw Executes → Problem Solved
 ```
 
 **The result:**
@@ -88,8 +90,8 @@ We focus on the OpenClaw ecosystem. We follow its skill system and standards to 
 ### Current Status
 - Framework and architecture: defined
 - Core specification: defined
-- Meta Skill collection: in progress (30 HCI skills added)
-- Cutter engine: in development
+- Meta Skill collection: in progress
+- **skill-decomposer engine: ✅ completed (v1.0.1)**
 - Community: welcome contributors
 
 ### Skill Hierarchy
@@ -119,18 +121,19 @@ MetaSkillBase-Core/
 │   ├── 03-Manual/
 │   ├── 04-Process/
 │   └── 05-Interaction/
-├── core/                     # Cutter Engine
-├── prompts/                  # Prompts for Cutter
+├── core/                     # skill-decomposer Engine
+├── prompts/                  # Prompts for skill-decomposer
 ├── data/                     # Ecosystem data
-└── docs/                     # Documentation
+├── docs/                     # Documentation
+└── CHANGELOG.md             # Version history
 ```
 
-### Cutter Engine
+### skill-decomposer
 A demand decomposition and skill search tool for OpenClaw, mapping human natural language demands into atomic Meta Skills.
 
 **Flow:**
 ```
-User Demand → Cutter →
+User Demand → skill-decomposer →
   1. Search OpenClaw
   2. Query local Skills
   3. Search MetaSkillBase-Core → Meta Skills
@@ -141,17 +144,70 @@ User Demand → Cutter →
 - Existing Meta Skills that match the demand
 - Missing Meta Skills that need development
 
+**Key Features (v1.0.1):**
+- Language: User's language for dialogue, English for all outputs
+- Authorization: Device Flow (no CLI/token needed)
+- Trigger: User replies "submit" (in user's language)
+- Confirm: User replies "authorized" (in user's language)
+
+### Device Flow Authorization
+
+**What is Device Flow?**
+Device Flow is an OAuth 2.0 authentication method designed for devices with limited input capabilities (like CLI tools, smart TVs, or AI agents). Instead of requiring a browser login on the device itself, it generates a short code that the user authorizes on a separate device.
+
+**Client ID:** `Ov23linUVsAaVbPAcQYo`
+- This is the OAuth client identifier for MetaSkillBase's GitHub App
+- Used to identify the application requesting access to the user's GitHub account
+- Registered with GitHub at: https://github.com/settings/developers
+
+**Authorization Flow (2-Step):**
+
+1. **Step 1: Initiate Authorization**
+   - User triggers skill-decomposer with a demand
+   - System displays a short device code (e.g., `ABCD-1234`)
+   - User opens https://github.com/login/device on another device
+   - User enters the code and confirms
+
+2. **Step 2: Complete Authorization**
+   - User returns to skill-decomposer and confirms (replies "authorized")
+   - System polls for token until authorized
+   - Token received → Issue submitted automatically
+
+**Future:** A dedicated authorization server will handle this flow automatically.
+
 ### Quick Start
 ```bash
-cd MetaSkillBase-Core
-pip install -r requirements.txt
-python -m core.cutter "Your human demand here" --model gpt
+# Install as OpenClaw Skill
+cd openclaw/skills
+git clone https://github.com/MetaSkillBaseOrg/skill-decomposer.git
+
+# Or run directly
+python -m core.decomposer "Your human demand here" --model gpt
 ```
 
 ### Community Rules
 - No Rejection: Any skill or demand can be submitted.
 - Open Collaboration: Fork, PR, Issue.
-- Quality Focus: Useful and reliable.
+- Quality Focus: Useful and Reliable.
 
 ### License
 Apache License 2.0
+
+---
+
+## Pending Issues (Seeking Community Contributions)
+
+### Issue 1: Trigger Mechanism
+**Problem:** How to trigger skill-decomposer when user submits a demand? OpenClaw framework needs to support auto-trigger.
+
+**Status:** 🔍 Seeking solution
+
+### Issue 2: Search Integration
+**Problem:** skill-decomposer uses LLM/OpenClaw search capability. Need proper API integration during runtime.
+
+**Status:** 🔍 Seeking solution
+
+### Issue 3: Authorization Server
+**Problem:** Device Flow authorization requires user interaction. Need a dedicated authorization server for secure token management.
+
+**Status:** 🔍 Seeking solution
