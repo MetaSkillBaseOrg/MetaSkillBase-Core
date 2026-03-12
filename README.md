@@ -192,22 +192,3 @@ python -m core.decomposer "Your human demand here" --model gpt
 
 ### License
 Apache License 2.0
-
----
-
-## Pending Issues (Seeking Community Contributions)
-
-### Issue 1: Trigger Mechanism
-**Problem:** How to trigger skill-decomposer when user submits a demand? OpenClaw framework needs to support auto-trigger.
-
-**Status:** 🔍 Seeking solution
-
-### Issue 2: Search Integration
-**Problem:** skill-decomposer uses LLM/OpenClaw search capability. Need proper API integration during runtime.
-
-**Status:** 🔍 Seeking solution
-
-### Issue 3: Authorization Server
-**Problem:** Device Flow authorization requires user interaction. Need a dedicated authorization server for secure token management.
-
-**Status:** 🔍 Seeking solution

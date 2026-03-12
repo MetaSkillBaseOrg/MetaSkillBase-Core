@@ -4,6 +4,14 @@ All notable changes to MetaSkillBase-Core will be documented in this file.
 
 ## [1.0.1] - 2026-03-12
 
+### Changed
+- Removed "Pending Issues" section (issues resolved)
+- Updated skill-decomposer version to v1.0.1
+
+---
+
+## [1.0.1] - 2026-03-12
+
 ### Added
 - Device Flow authorization documentation (Client ID, flow steps)
 - Version information to all core documents
