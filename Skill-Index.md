@@ -6,7 +6,7 @@
 
 | Skill Name | Version | Category | Description |
 |------------|---------|----------|-------------|
-| skill-decomposer | 1.0.2 | 04-Process | Demand decomposition and skill search |
+| skill-decomposer | 1.0.2 | 04-Process | Decompose human natural language demands into atomic Meta Skills and search existing skills |
 
 ---
 

@@ -6,7 +6,7 @@ All notable changes to MetaSkillBase-Core will be documented in this file.
 
 ### Changed
 - skill-decomposer updated to v1.0.2
-- Removed Device Flow authorization
+- Removed Device Flow authorization (replaced by proxy server submission)
 - Added Quick Submit via proxy server
 - Simplified submission to 2 methods: Quick Submit + Manual Submit
 
@@ -21,15 +21,12 @@ All notable changes to MetaSkillBase-Core will be documented in this file.
 ### Changed
 - Removed "Pending Issues" section (issues resolved)
 - Updated skill-decomposer version to v1.0.1
+- Renamed "Cutter" to "skill-decomposer" throughout
 
 ### Added
 - Device Flow authorization documentation (Client ID, flow steps)
 - Version information to all core documents
 - This CHANGELOG file
-
-### Changed
-- Updated skill-decomposer version to v1.0.1
-- Renamed "Cutter" to "skill-decomposer" throughout
 
 ### Removed
 - GitHub CLI personal token references

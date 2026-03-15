@@ -39,7 +39,7 @@
 - Query local skills
 - Search MetaSkillBase-Core for Meta Skills
 - Submit missing Meta Skills for development
-- Language: Dialogue in user's language, outputs in English
+- Language: Dialogue in user's language, outputs skill names/metadata in English
 
 ### 7. Submission Methods
 - **Quick Submit**: Via proxy server (http://47.79.18.9:3000)

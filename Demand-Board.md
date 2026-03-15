@@ -4,8 +4,8 @@
 
 ## 1. Demand Submission
 - Submit clear, executable human demands.
-- Title format: `Demand: [Skill Name] — [Description]`
-- Label: `status:todo` (white) - Waiting for development
+- Title format: `Demand: [Skill Name] – [Description]`
+- Label: `status:todo` (White) - Waiting for development
 
 ## 2. Demand Status Labels
 | Label | Color | Meaning |
