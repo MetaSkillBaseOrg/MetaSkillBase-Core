@@ -4,7 +4,7 @@
 
 ## 1. Demand Submission
 - Submit clear, executable human demands.
-- Title format: `Demand: [Skill Name] – [Description]`
+- Title format: `Demand: [Skill Name] — [Description]`
 - Label: `status:todo` (White) - Waiting for development
 
 ## 2. Demand Status Labels
@@ -18,7 +18,7 @@
 ## 3. Skill Implementation
 - Claim unclaimed demands.
 - Develop atomic skills.
-- Place in correct category.
+- Classify freely: use existing directories, create new ones, or place in 00-Unclassified if unsure.
 
 ## 4. skill-decomposer Integration
 1. Search OpenClaw
@@ -27,7 +27,7 @@
 4. Submit missing Meta Skills (Quick Submit or Manual Submit)
 
 ## 5. Workflow
-Submit Demand → Claim → Develop → Merge → Track Usage Count
+Submit Demand → Claim → Develop → Submit PR → 7-day community review → Auto-Merge → Track Usage Count
 
 ## 6. Submission Methods
 - **Quick Submit**: Via proxy server (recommended)

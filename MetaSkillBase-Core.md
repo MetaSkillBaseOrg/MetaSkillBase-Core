@@ -6,7 +6,7 @@
 ### 1. Core Concept
 - **One for Human, One for Bot**: Every product needs two instructions — one for humans, one for bots.
 - **Meta Skill**: Finest-grained reusable functional component.
-- Elastic Classification: No rejection, no audit, only organization.
+- **Elastic Classification**: No rejection, no audit, only organization. Existing directories under skills/ are examples only, not mandatory.
 - Usage Count reflects community value.
 - OpenClaw Compatible.
 
@@ -15,24 +15,30 @@
 - Supply-oriented: Every Meta Skill is a valuable "supply".
 
 ### 3. Repository Structure
-- 00-Unclassified
+The directories listed below are **examples only** (not mandatory):
+- 00-Unclassified (for skills with undetermined classification)
 - 01-Base
 - 02-Device
 - 03-Manual
 - 04-Process
 - 05-Interaction
 
+Contributors may create new classification directories freely, and all PRs will be merged automatically after 7 days if no community objections.
+
 ### 4. Core Value
 1. **Supply-Driven**: Every Meta Skill is a valuable "supply" — the more, the better
 2. **Demand-Responsive**: Every demand can be decomposed and fulfilled
 3. **Open Collaboration**: Anyone can contribute — no rejection, no audit
-4. **Human-Bot Symbiosis**: Humans describe needs; machines execute solutions
+4. **Flexible Classification**: Encourage creation of new categories; existing directories are samples
+5. **Human-Bot Symbiosis**: Humans describe needs; machines execute solutions
 
 ### 5. Contribution Rules
 - Any demand or skill can be submitted.
 - Skills must be atomic: one skill = one minimal function.
 - All skills compatible with OpenClaw.
+- Classify freely: use existing directories, create new ones, or place in 00-Unclassified if unsure.
 - Contributions recorded and credited.
+- PRs will be merged automatically after 7 days if no community objections.
 
 ### 6. skill-decomposer Rules
 - Search OpenClaw

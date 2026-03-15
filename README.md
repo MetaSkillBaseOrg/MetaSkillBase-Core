@@ -31,13 +31,15 @@ This is not just about documentation. This is about **making every product AI-co
 I asked my Mac mini to upgrade OpenClaw. It said: *"I can't. No permission."*
 
 **Conversation:**
-```
-OpenClaw: I've run Terminal. You can input the password now.
-Me: I can't see where to input the password. You need to activate Terminal in a way that I can see.
-OpenClaw: Got it! Using mac_activate to bring Terminal to the foreground.
-Me: Now I can see it. Let me enter the password... Done!
-OpenClaw: Upgrade complete! 🎉
-```
+> **OpenClaw:** I've run Terminal. You can input the password now.
+>
+> **Me:** I can't see where to input the password. You need to activate Terminal in a way that I can see.
+>
+> **OpenClaw:** Got it! Using `mac_activate` to bring Terminal to the foreground.
+>
+> **Me:** Now I can see it. Let me enter the password... Done!
+>
+> **OpenClaw:** Upgrade complete! 🎉
 **Result:** OpenClaw upgraded through human-machine collaboration.
 
 ---
@@ -45,7 +47,7 @@ OpenClaw: Upgrade complete! 🎉
 ### Why This Matters
 
 1. **Machines prefer background silent execution** — but AI solving real problems often requires human-machine collaboration
-2. **This is just ONE case** — Mac operations need: activate app, run terminal, adjust volume, take screenshot, lock screen... — **38 Meta Skills**
+2. **This is just ONE case** — Mac operations need: activate app, run terminal, adjust volume, take screenshot, lock screen... — **30+ Meta Skills**
 3. **The finer the decomposition, the easier the development**
    - Complex demand → Simple Meta Skills → Easy to build, easy to combine
 4. **Human's role:** Describe the demand
@@ -84,8 +86,8 @@ Your Demand → skill-decomposer → Atomic Meta Skills → OpenClaw Executes �
 - Support multiple submission methods
 
 ### Submission Methods
-1. **Quick Submit** – Via proxy server (recommended)
-2. **Manual Submit** – Get submission link
+1. **Quick Submit** - Via proxy server (recommended)
+2. **Manual Submit** - Get submission link
 
 ### Usage
 1. User describes a requirement
@@ -112,3 +114,8 @@ Your Demand → skill-decomposer → Atomic Meta Skills → OpenClaw Executes �
 **Contact:**
 - GitHub: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core
 - Issues: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core/issues
+
+---
+
+*Last Updated: 2026-03-15*
+*Version: 1.0.2*
