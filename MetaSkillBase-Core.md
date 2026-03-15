@@ -1,9 +1,9 @@
 # MetaSkillBase-Core
 ## Core Specification & Repository Rules
 
-**Version:** 1.0.1 (2026-03-12)
+**Version:** 1.0.2 (2026-03-15)
 
-### 1. Core Philosophy
+### 1. Core Concept
 - **One for Human, One for Bot**: Every product needs two instructions — one for humans, one for bots.
 - **Meta Skill**: Finest-grained reusable functional component.
 - Elastic Classification: No rejection, no audit, only organization.
@@ -40,10 +40,7 @@
 - Search MetaSkillBase-Core for Meta Skills
 - Submit missing Meta Skills for development
 - Language: Dialogue in user's language, outputs in English
-- Authorization: Device Flow (Client ID: Ov23linUVsAaVbPAcQYo)
 
-### 7. Authorization Method
-- **Current:** Device Flow (OAuth 2.0)
-- **Client ID:** Ov23linUVsAaVbPAcQYo
-- **Flow:** 2-step (device code + user confirmation)
-- **Future:** Dedicated authorization server
+### 7. Submission Methods
+- **Quick Submit**: Via proxy server (http://47.79.18.9:3000)
+- **Manual Submit**: Get GitHub issue link

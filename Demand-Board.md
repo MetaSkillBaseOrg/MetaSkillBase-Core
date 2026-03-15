@@ -1,10 +1,10 @@
 # Demand Board
 
-**Version:** 1.0.1 (2026-03-12)
+**Version:** 1.0.2 (2026-03-15)
 
 ## 1. Demand Submission
 - Submit clear, executable human demands.
-- Title format: `Demand: [Skill Name] – [Description]`
+- Title format: `Demand: [Skill Name] — [Description]`
 - Label: `status:todo` (white) - Waiting for development
 
 ## 2. Demand Status Labels
@@ -24,7 +24,11 @@
 1. Search OpenClaw
 2. Query local skills
 3. Search MetaSkillBase-Core for Meta Skills
-4. Record missing Meta Skills
+4. Submit missing Meta Skills (Quick Submit or Manual Submit)
 
 ## 5. Workflow
 Submit Demand → Claim → Develop → Merge → Track Usage Count
+
+## 6. Submission Methods
+- **Quick Submit**: Via proxy server (recommended)
+- **Manual Submit**: Via GitHub issue link

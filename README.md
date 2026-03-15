@@ -1,7 +1,7 @@
 # MetaSkillBase-Core
 ## Meta Skill Library for Demand Decomposition & OpenClaw Ecosystem
 
-**Version:** 1.0.1 (2026-03-12)
+**Version:** 1.0.2 (2026-03-15)
 
 A universal, open, and elastic meta skill ecosystem that decomposes human demands into reusable atomic meta skills — **One for Human, One for Bot**.
 
@@ -19,7 +19,7 @@ This is not just about documentation. This is about **making every product AI-co
 **Real example:**
 - Your air conditioner has HomeKit
 - **One for Human**: Remote control manual
-- **One for Bot**: Air conditioner Meta Skill → OpenClaw can control it
+- **One for Bot**: Air conditioner Meta Skill — OpenClaw can control it
 
 **The vision:** A world where every product has both — readable by humans, executable by AI. This is the future Meta Skill enables.
 
@@ -39,8 +39,7 @@ I asked my Mac mini to upgrade OpenClaw. It said: *"I can't. No permission."*
 > 
 > **Me:** Now I can see it. Let me enter the password... Done!
 > 
-> **OpenClaw:** Upgrade complete! ✅
-
+> **OpenClaw:** Upgrade complete! 🎉
 **Result:** OpenClaw upgraded through human-machine collaboration.
 
 ---
@@ -48,7 +47,7 @@ I asked my Mac mini to upgrade OpenClaw. It said: *"I can't. No permission."*
 ### Why This Matters
 
 1. **Machines prefer background silent execution** — but AI solving real problems often requires human-machine collaboration
-2. **This is just ONE case** — Mac operations need: activate app, run terminal, adjust volume, take screenshot, lock screen... → **30+ Meta Skills**
+2. **This is just ONE case** — Mac operations need: activate app, run terminal, adjust volume, take screenshot, lock screen... — **30+ Meta Skills**
 3. **The finer the decomposition, the easier the development**
    - Complex demand → Simple Meta Skills → Easy to build, easy to combine
 4. **Human's role:** Describe the demand
@@ -70,125 +69,53 @@ Your Demand → skill-decomposer → Atomic Meta Skills → OpenClaw Executes �
 ```
 
 **The result:**
-- **Humans** focus on *describing needs*
-- **Meta Skills** provide *atomic capabilities* (basic skill units)
-- **OpenClaw** handles *execution*
-- Every human's problem can be solved
-
-**This is our vision:** A world where anyone can change the world through OpenClaw — not by knowing technology, but by having the willingness to solve problems.
+- Anyone can use AI to solve problems
+- No technical knowledge required
+- Just describe what you need
 
 ---
 
-OpenClaw has built a complete Skill system.
-We found that most skills can be further decomposed into finer, reusable, professional basic units.
+## skill-decomposer v1.0.2
 
-Therefore, we define:
-- **Meta Skill**: Supply-oriented, developer-facing, atomic, reusable finest-grained functional component.
+**Demand Decomposition Tool for OpenClaw**
 
-We focus on the OpenClaw ecosystem. We follow its skill system and standards to build and provide Meta Skills, and contribute to the OpenClaw community.
+### Features
+- Decompose user requirements into atomic meta skills
+- Search local skills, ClawHub, and MetaSkillBase community
+- Submit new demands to community for development
+- Support multiple submission methods
 
-### Current Status
-- Framework and architecture: defined
-- Core specification: defined
-- Meta Skill collection: in progress
-- **skill-decomposer engine: ✅ completed (v1.0.1)**
-- Community: welcome contributors
+### Submission Methods
+1. **Quick Submit** - Via proxy server (recommended)
+2. **Manual Submit** - Get submission link
 
-### Skill Hierarchy
-```
-Human Demand
-    ↓
-OpenClaw
-    ↓
-Meta Skill       ←───── MetaSkillBase-Core
-```
+### Usage
+1. User describes a requirement
+2. skill-decomposer analyzes and searches
+3. If no existing skill found, submit demand to community
+4. Community develops the needed skill
 
-- **Meta Skill**: Finest-grained reusable functional component.
+---
 
-### Core Value
-1. **Supply-Driven**: Every Meta Skill is a valuable "supply" — the more, the better
-2. **Demand-Responsive**: Every demand can be decomposed and fulfilled
-3. **Open Collaboration**: Anyone can contribute — no rejection, no audit
-4. **Human-Bot Symbiosis**: Humans describe needs; machines execute solutions
+## Status
 
-### Repository Structure
-```
-MetaSkillBase-Core/
-├── skills/                    # Core meta skill library
-│   ├── 00-Unclassified/
-│   ├── 01-Base/
-│   ├── 02-Device/
-│   ├── 03-Manual/
-│   ├── 04-Process/
-│   └── 05-Interaction/
-├── core/                     # skill-decomposer Engine
-├── prompts/                  # Prompts for skill-decomposer
-├── data/                     # Ecosystem data
-├── docs/                     # Documentation
-└── CHANGELOG.md             # Version history
-```
+**Current Version:** 1.0.2 (2026-03-15)
 
-### skill-decomposer
-A demand decomposition and skill search tool for OpenClaw, mapping human natural language demands into atomic Meta Skills.
+---
 
-**Flow:**
-```
-User Demand → skill-decomposer →
-  1. Search OpenClaw
-  2. Query local Skills
-  3. Search MetaSkillBase-Core → Meta Skills
-  4. Submit Demand (if missing)
-```
+## Join Us
 
-**Output:**
-- Existing Meta Skills that match the demand
-- Missing Meta Skills that need development
+**MetaSkillBase is an open community.** Anyone can:
+- Submit demands
+- Develop skills
+- Contribute code
+- Improve documentation
 
-**Key Features (v1.0.1):**
-- Language: User's language for dialogue, English for all outputs
-- Authorization: Device Flow (no CLI/token needed)
-- Trigger: User replies "submit" (in user's language)
-- Confirm: User replies "authorized" (in user's language)
+**Contact:**
+- GitHub: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core
+- Issues: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core/issues
 
-### Device Flow Authorization
+---
 
-**What is Device Flow?**
-Device Flow is an OAuth 2.0 authentication method designed for devices with limited input capabilities (like CLI tools, smart TVs, or AI agents). Instead of requiring a browser login on the device itself, it generates a short code that the user authorizes on a separate device.
-
-**Client ID:** `Ov23linUVsAaVbPAcQYo`
-- This is the OAuth client identifier for MetaSkillBase's GitHub App
-- Used to identify the application requesting access to the user's GitHub account
-- Registered with GitHub at: https://github.com/settings/developers
-
-**Authorization Flow (2-Step):**
-
-1. **Step 1: Initiate Authorization**
-   - User triggers skill-decomposer with a demand
-   - System displays a short device code (e.g., `ABCD-1234`)
-   - User opens https://github.com/login/device on another device
-   - User enters the code and confirms
-
-2. **Step 2: Complete Authorization**
-   - User returns to skill-decomposer and confirms (replies "authorized")
-   - System polls for token until authorized
-   - Token received → Issue submitted automatically
-
-**Future:** A dedicated authorization server will handle this flow automatically.
-
-### Quick Start
-```bash
-# Install as OpenClaw Skill
-cd openclaw/skills
-git clone https://github.com/MetaSkillBaseOrg/skill-decomposer.git
-
-# Or run directly
-python -m core.decomposer "Your human demand here" --model gpt
-```
-
-### Community Rules
-- No Rejection: Any skill or demand can be submitted.
-- Open Collaboration: Fork, PR, Issue.
-- Quality Focus: Useful and Reliable.
-
-### License
-Apache License 2.0
+*Last Updated: 2026-03-15*
+*Version: 1.0.2*

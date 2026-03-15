@@ -2,15 +2,25 @@
 
 All notable changes to MetaSkillBase-Core will be documented in this file.
 
+## [1.0.2] - 2026-03-15
+
+### Changed
+- skill-decomposer updated to v1.0.2
+- Removed Device Flow authorization
+- Added Quick Submit via proxy server
+- Simplified submission to 2 methods: Quick Submit + Manual Submit
+
+### Fixed
+- Code cleanup: removed all Chinese comments
+- Standardized error messages in English
+
+---
+
 ## [1.0.1] - 2026-03-12
 
 ### Changed
 - Removed "Pending Issues" section (issues resolved)
 - Updated skill-decomposer version to v1.0.1
-
----
-
-## [1.0.1] - 2026-03-12
 
 ### Added
 - Device Flow authorization documentation (Client ID, flow steps)
@@ -26,7 +36,7 @@ All notable changes to MetaSkillBase-Core will be documented in this file.
 
 ---
 
-## [1.0.0] - 2026-02-11
+## [1.0.0] - 2026-03-12
 
 ### Added
 - Initial release

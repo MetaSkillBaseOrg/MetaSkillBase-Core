@@ -1,27 +1,21 @@
-# Contributing to MetaSkillBase-Core
+# CONTRIBUTING
 
-**Version:** 1.0.1 (2026-03-12)
+**Version:** 1.0.2 (2026-03-15)
 
-## Who Can Contribute?
-- Contributor: submits skills, demands, code, docs
-- Developer: improves skill-decomposer Engine
-- Documenter: updates documents
+## How to Contribute
 
-## Contribution Workflow
-1. **Submit New Demand**
-   - Create Issue: `Demand: [Skill Name] – [Description]`
-   - Label: `status:todo`
+### 1. Submit a Demand
+Use skill-decomposer to analyze your requirement. If no existing skill satisfies your need, submit a demand to the community.
 
-2. **Develop Skill**
-   - Claim unclaimed demand
-   - Develop atomic, executable skill
-   - Place in correct category
-   - Create PR
+### 2. Develop a Skill
+- Skills must be atomic: one skill = one minimal function
+- Follow OpenClaw skill structure
+- Include complete documentation
 
-3. **Contribute to skill-decomposer**
-   - Follow PEP 8
-   - Add clear comments
-   - Test locally
+### 3. Submit Your Work
+- Fork the repository
+- Add your skill to appropriate category
+- Submit a Pull Request
 
 ## Standards
 - Atomic: one skill = one minimal function
