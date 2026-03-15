@@ -1,7 +1,7 @@
 ---
 name: skill-decomposer
 description: Requirement Decomposition Framework - Analyze user needs, search Skills (local + community), determine if new Meta Skill development is needed
-metadata: {"openclaw":{"emoji":"🔧","user-invocable":true}}
+metadata: {"openclaw":{"emoji":"🔧","user-invocable":true,"version":"1.0.2"}}
 ---
 
 ## When to Use
@@ -81,102 +81,64 @@ Step 5: Evaluation
 Step 6: Solution Assembly
 Full Solution = Existing Skills + Required Meta Skills
 
-## Step 7: Push to Community
+## Step 7: 提交到社区
 
-Should this demand be submitted to MetaSkillBase community? Please reply "submit".
+完成前6步需求分析后，询问用户选择提交方式：
 
----
+是否将此需求提交到 MetaSkillBase 社区？请选择提交方式：
 
-## About MetaSkillBase Community
+1. **快速提交** - 使用服务器本地Token直接提交（推荐）
+2. **手动提交** - 获取提交链接信息
 
-OpenClaw MetaSkillBase is an open source community focused on developing practical Meta Skills for OpenClaw platform.
-
-**Key Features (v1.0.1):**
-- Language: User's language for dialogue, English for all outputs
-- Authorization: Device Flow (no CLI/token needed)
-- Trigger: User replies "submit"
-- Confirm: User replies "authorized"
-
-**After submission:**
-1. Your requirement will be posted to community GitHub Issues
-2. Community developers will see your requirement
-3. Someone may claim and help develop the Skill
-4. New Skill will be added to repository for everyone
-
-**Why submit:**
-- Get desired Skill for free
-- Community collaboration, improve OpenClaw ecosystem
-- No need to write code yourself
+请回复 "快速提交" 或 "手动提交"。
 
 ---
 
-## Device Flow Authorization
+## When User Says "快速提交" / "直接提交" / "一键提交"
 
-**What is Device Flow?**
-Device Flow is an OAuth 2.0 authentication method designed for devices with limited input capabilities (like CLI tools, smart TVs, or AI agents). Instead of requiring a browser login on the device itself, it generates a short code that the user authorizes on a separate device.
+当用户说以下任一触发词时：
+- "快速提交"
+- "quick submit"
+- "fast submit"
+- "直接提交"
+- "一键提交"
 
-**Client ID:** `Ov23linUVsAaVbPAcQYo`
-- This is the OAuth client identifier for MetaSkillBase's GitHub App
-- Used to identify the application requesting access to the user's GitHub account
-- Registered with GitHub at: https://github.com/settings/developers
+执行以下流程：
 
-**Authorization Flow (2-Step):**
+1. **确认已获取必要信息**：
+   - **Issue标题（英文）**: `Demand: {核心功能英文描述}`
+   - **Issue内容（英文）**
+   - **标签**: 默认 `["status:todo"]`
 
-1. **Step 1: Initiate Authorization**
-   - User triggers skill-decomposer with a demand
-   - System displays a short device code (e.g., `ABCD-1234`)
-   - User opens https://github.com/login/device on another device
-   - User enters the code and confirms
+2. **调用快速提交函数**（通过香港服务器代理）:
+   - API: `http://47.79.18.9:3000/api/submit`
 
-2. **Step 2: Complete Authorization**
-   - User returns to skill-decomposer and confirms (replies "authorized")
-   - System polls for token until authorized
-   - Token received → Issue submitted automatically
+3. **返回结果**：
+   - **成功**: ✅ Issue created successfully! 🔗 Link: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core/issues/{ID}
+   - **失败**: ❌ {error message}
 
-**Future:** A dedicated authorization server will handle this flow automatically.
+4. **Failure Handling**：
+   - 如果快速提交失败，提示用户选择手动提交
 
 ---
 
-## When User Says "submit"
+## When User Says "手动提交"
 
-When user says "submit", execute Device Flow:
+When user says "手动提交":
 
-1. Call `POST https://github.com/login/device/code` with `client_id=Ov23linUVsAaVbPAcQYo&scope=public_repo`
-2. Extract `user_code` and `device_code` from response
-3. Display to user (in user's language):
+显示手动提交信息（in user's language）:
 
 ```
-🔑 Device Authorization
-Device Code: [user_code]
-Open this link: https://github.com/login/device
-Enter the code above to authorize.
-```
+## 手动提交
 
-4. Then tell user (in user's language): "After authorization, please reply 'authorized'."
+请手动提交:
 
----
+🔗 链接: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core/issues/new
 
-## When User Says "authorized" (after authorization)
+标题: Demand: {requirement_name}
+标签: status:todo
 
-When user says "authorized":
-
-1. Call device_flow.js `continueAfterAuthorization()` function
-2. If authorized successfully (in user's language):
-   - ✅ Display: `Issue submitted successfully! 🔗 https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core/issues/[ID]`
-3. If failed (timeout, error, etc.) (in user's language):
-   - Display manual submission info:
-
-```
-## Manual Submission
-
-Please submit manually:
-
-🔗 Link: https://github.com/MetaSkillBaseOrg/MetaSkillBase-Core/issues/new
-
-Title: Demand: {requirement_name}
-Label: status:todo
-
-Content:
+内容:
 ## Description
 [Your requirement description]
 
@@ -188,9 +150,22 @@ Content:
 04-Process (Automation)
 ```
 
-Issue content (internal only):
-- **Title**: Demand: {requirement_name}
-- **Labels**: status:todo
+---
+
+## About MetaSkillBase Community
+
+OpenClaw MetaSkillBase is an open source community focused on developing practical Meta Skills for OpenClaw platform.
+
+**After submission:**
+1. Your requirement will be posted to community GitHub Issues
+2. Community developers will see your requirement
+3. Someone may claim and help develop the Skill
+4. New Skill will be added to repository for everyone
+
+**Why submit:**
+- Get desired Skill for free
+- Community collaboration, improve OpenClaw ecosystem
+- No need to write code yourself
 
 ---
 
