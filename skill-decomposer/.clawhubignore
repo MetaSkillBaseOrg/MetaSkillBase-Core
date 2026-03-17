@@ -1,0 +1,16 @@
+# 忽略Node.js相关冗余文件
+node_modules/
+package-lock.json
+.npmrc
+.env
+.env.local
+
+# 忽略日志/缓存/临时文件
+logs/
+tmp/
+*.log
+
+# 忽略编辑器配置
+.vscode/
+.idea/
+*.swp
